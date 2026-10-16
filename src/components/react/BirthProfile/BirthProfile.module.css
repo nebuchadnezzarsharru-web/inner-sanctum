@@ -1,0 +1,188 @@
+.container {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.badge {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-cyan);
+  background: var(--glow-cyan);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--text-primary);
+  margin: 4px 0 0 0;
+}
+
+.sectionLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Растягиваем пикер на всю ширину и добавляем подсветку фокуса */
+.pickerWrapper {
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Центральная неоновая линия-фокус */
+.pickerWrapper::after {
+  content: '';
+  position: absolute;
+  top: 45px;
+  left: 8px;
+  right: 8px;
+  height: 40px;
+  border-top: 1px solid var(--border-active);
+  border-bottom: 1px solid var(--border-active);
+  background: var(--glow-cyan);
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 4px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
+.itemSelected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+  z-index: 3;
+  position: relative;
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  padding: 2px 0;
+}
+
+.toggleLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  accent-color: var(--accent-cyan);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.primaryBtn {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.25) 0%, rgba(6, 182, 212, 0.05) 100%);
+  border: 1px solid var(--accent-cyan);
+  color: var(--text-primary);
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 44px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.primaryBtn:hover {
+  background: rgba(6, 182, 212, 0.35);
+  box-shadow: 0 0 15px var(--glow-cyan);
+}
+
+/* Заблокированное состояние (паспорт) */
+.lockedDisplay {
+  display: flex;
+  gap: 16px;
+  background: var(--bg-input);
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+}
+
+.lockedItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lockedLabel {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.lockedValue {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.editBtn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.editBtn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
